@@ -1,0 +1,437 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');Hela skärmens bakgrund */
+body {
+  margin: 0;
+  background: url("images/bakgrund.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+/* A4 */
+
+.a4 {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  margin: 40px 0;
+  background-color: #d3e9ed; /* mycket ljus mint */
+  overflow: hidden;
+}
+
+/* Regnbåge diagonalt */
+.rainbow {
+  position: absolute;
+  top: 100px;
+  left: -60px;
+  width: 110%;
+  transform: rotate(0deg);
+  z-index: 5;
+}
+
+/* Gemensam moln-stil */
+.cloud {
+  position: absolute;
+  width: 200px;
+  z-index: 10;
+
+  filter: drop-shadow(0 0 10px rgba(220, 217, 217, 0.5))
+    drop-shadow(0 6px 10px rgba(199, 197, 197, 0.3));
+}
+
+/* Placering */
+.cloud1 {
+  top: 370px;
+  left: 55px;
+}
+.cloud2 {
+  top: 180px;
+  right: 40px;
+  animation: float2 6s ease-in-out infinite;
+}
+.cloud3 {
+  bottom: 220px;
+  left: 50px;
+}
+.cloud4 {
+  bottom: 130px;
+  right: 80px;
+}
+
+/* Stjärna med blink + mjuk glow */
+.star {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: auto;
+  z-index: 70;
+
+  /* animation */
+  animation: blinkGlow 3s infinite;
+}
+
+/* Blink + pulserande glow i samma keyframes */
+@keyframes blinkGlow {
+  0% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 5px #b2dcde);
+  }
+  25% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px #9bdee0);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 25px #73b1b4);
+  }
+  75% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px #b8ebed);
+  }
+  100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 5px #a8e7e9);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.63;
+    /* Pulsande glow */
+    @keyframes glow {
+      0% {
+        filter: drop-shadow(0 0 10px #00f6ff);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #00f6ff);
+      }
+      100% {
+        filter: drop-shadow(0 0 10px #00f6ff);
+      }
+    }
+  }
+}
+.rubrik {
+  position: absolute;
+  top: 135px; /* justera efter stjärnan */
+  left: 50%; /* centrerar horisontellt */
+  transform: translateX(-50%); /* exakt centrering */
+
+  font-family: "Bodoni", bold;
+  font-size: 36px;
+  font-weight: 500;
+  color: #71bac2;
+  letter-spacing: 1px;
+  z-index: 30;
+  text-align: center;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.cloud {
+  animation: float 6s ease-in-out infinite;
+}
+/* --- Individuell moln-animation --- */
+.cloud1 {
+  animation: float1 7s ease-in-out infinite;
+}
+.cloud2 {
+  animation: float2 5s ease-in-out infinite;
+}
+.cloud3 {
+  animation: float3 9s ease-in-out infinite;
+}
+.cloud4 {
+  animation: float4 6s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0% {
+    transform: scaleX(-1) translate(0, 0);
+  }
+  50% {
+    transform: scaleX(-1) translate(10px, -12px);
+  }
+  100% {
+    transform: scaleX(-1) translate(0, 0);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-15px, -8px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float4 {
+  0% {
+    transform: scaleX(-1) translate(0, 0);
+  }
+  50% {
+    transform: scaleX(-1) translate(-8px, -10px);
+  }
+  100% {
+    transform: scaleX(-1) translate(0, 0);
+  }
+}
+
+.cloud1 {
+  animation-delay: 0s;
+}
+.cloud2 {
+  animation-delay: 1s;
+}
+.cloud3 {
+  animation-delay: 2s;
+}
+.cloud4 {
+  animation-delay: 0.5s;
+}
+/* Större moln */
+.cloud1 {
+  width: 470px;
+  animation: float1 7s ease-in-out infinite;
+}
+.cloud2 {
+  width: 280px;
+  transform: scaleY(1.2); /* 1.2 = 20% högre */
+  animation: float2 5s ease-in-out infinite;
+}
+.cloud3 {
+  width: 250px;
+  animation: float3 9s ease-in-out infinite;
+}
+.cloud4 {
+  width: 210px;
+  animation: float4 6s ease-in-out infinite;
+}
+
+/* Igelkotten längst ner */
+.hedgehog {
+  position: fixed; /* fast position i nederkant av skärmen */
+  bottom: 10px; /* 10px från nederkant */
+  left: -120px; /* start utanför vänster sida */
+  width: 100px; /* justera storlek */
+  z-index: 50;
+  animation: runHedgehog 6s linear infinite;
+}
+
+/* Animation: från vänster till höger */
+@keyframes runHedgehog {
+  0% {
+    left: -120px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+/* Igelkotten längst ner */
+.hedgehog {
+  position: fixed; /* fast position i nederkant av skärmen */
+  bottom: 10px; /* 10px från nederkant */
+  left: -120px; /* start utanför vänster sida */
+  width: 100px; /* justera storlek */
+  z-index: 50;
+  animation: runHedgehog 6s linear infinite;
+}
+/* Igelkott längst ner */
+.hedgehog {
+  position: fixed; /* fast i nederkant av skärmen */
+  bottom: 10px; /* avstånd från nederkant */
+  left: -120px; /* start utanför vänster sida */
+  width: 100px; /* justera storlek */
+  z-index: 50;
+  animation: runHedgehog 12s linear infinite; /* långsammare */
+}
+
+/* Animation: flytta från vänster till höger + spegelvänd */
+@keyframes runHedgehog {
+  0% {
+    transform: scaleX(-1);
+    left: -120px;
+  }
+  100% {
+    transform: scaleX(-1);
+    left: 100%;
+  }
+}
+.kurs {
+  max-width: 400px; /* max bredd */
+  max-height: 180px; /* max höjd */
+  width: auto;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+/* Grundstil */
+.kurs {
+  position: absolute; /* så vi kan placera den inom A4 */
+  bottom: 290px; /* avstånd från nederkant av A4 */
+  left: 68%; /* start mitt på A4 */
+  transform: translateX(-50%); /* centrera horisontellt */
+  width: 450px; /* behåll proportioner */
+  height: auto;
+  max-width: none;
+  transition: transform 0.2s ease-in-out;
+  z-index: 60;
+  filter: drop-shadow(
+    0px 4px 10px rgba(53, 53, 84, 0.5)
+  ); /* över moln men under stjärna om du vill */
+}
+
+/* Hover-effekt: vibrera och svaja */
+.kurs:hover {
+  animation: wobble 0.4s ease-in-out infinite;
+}
+
+/* Keyframes wobble */
+@keyframes wobble {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translateX(calc(-50% + 2px)) rotate(2deg);
+  }
+  50% {
+    transform: translateX(calc(-50% - 2px)) rotate(-2deg);
+  }
+  75% {
+    transform: translateX(calc(-50% + 1px)) rotate(1deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+.pin {
+  position: absolute;
+  bottom: 402px; /* justera så den hamnar ovanpå kursen */
+  left: 69%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: auto;
+  z-index: 100;
+  filter: drop-shadow(0px 5px 12px rgba(0, 0, 60, 0.5));
+}
+.top-left-text {
+  position: absolute;
+  top: 435px; /* avstånd från toppen på A4 */
+  left: 440px; /* avstånd från vänsterkant på A4 */
+  width: 40%; /* ungefär en fjärdedel på bredden */
+  color: #71bac2; /* mörk turkosgrön, kan ändras */
+  font-family: "Bodoni MT", sans-serif; /* byt till Bodoni om du vill */
+  z-index: 50;
+  .overlay-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40%;
+    color: #71bac2;
+    font-family: "Bodoni MT", serif;
+    z-index: 999;
+
+    /* Se till att texten ligger i vänsterkant */
+    text-align: left;
+  } /* ligger ovanpå bakgrunden men under moln om z-index är lägre */
+}
+.cloud-text-right {
+  position: absolute;
+  top: -230px; /* justera så den hamnar vid molnet */
+  right: -20px; /* placerar den i höger del */
+  width: 30%;
+  color: #71bac2;
+  font-family: "Bodoni MT", serif;
+  text-align: left;
+  z-index: 999;
+  .cloud-text4 a {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+.cloud-text4 {
+  position: absolute;
+  bottom: 200px; /* justera för molnets vertikala position */
+  left: 77%; /* centrerar texten horisontellt på molnet */
+  transform: translateX(-50%); /* gör exakt horisontell centering */
+  z-index: 999; /* ligger ovanpå molnet */
+}
+.cloud-text4 a {
+  font-family: "Fredoka One", cursive;
+  font-size: 26px;
+  font-weight: bold;
+  color: #b3d1d3;
+}
+/* Övre vänstra block */
+.top-left-block {
+  position: absolute;
+  top: 80px;
+  left: 420px;
+  width: 30%;
+  color: #b3d1d3;
+  font-family: "Bodoni MT", serif;
+  text-align: left;
+  z-index: 999;
+}
+.cloud3-link {
+  position: absolute;
+  top: 840px; /* justera så bilden ligger på molnet */
+  left: 30%; /* justera horisontellt på molnet */
+  z-index: 999; /* ligger ovanpå molnet */
+}
+
+.cloud3-link img {
+  width: 50px; /* storlek på bilden */
+  height: auto; /* behåller proportioner */
+  cursor: pointer; /* visar hand när man hovrar */
+  transition: transform 0.2s ease; /* för liten hover-effekt */
+}
+
+.cloud3-link img:hover {
+  transform: scale(1.2); /* liten förstoring på hover */
+}
+.email-link {
+  position: absolute;
+  top: 900px; /* justera höjd */
+  left: 450px; /* justera avstånd från högerkant */
+  font-family: "Bodoni", serif; /* samma stil som övrig text eller ändra */
+  font-size: 16px;
+  color: #8dcdcd; /* turkosgrön */
+  text-decoration: none; /* ingen understrykning */
+  z-index: 999;
+}
+
+.email-link:hover {
+  text-decoration: underline; /* valfri hover-effekt */
+  color: #6ea1ab; /* ändra färg vid hover */
+}
