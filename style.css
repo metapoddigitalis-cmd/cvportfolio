@@ -411,27 +411,28 @@ body {
 }
 
 .cloud3-link img {
-  width: 50px; /* storlek på bilden */
-  height: auto; /* behåller proportioner */
-  cursor: pointer; /* visar hand när man hovrar */
-  transition: transform 0.2s ease; /* för liten hover-effekt */
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .cloud3-link img:hover {
-  transform: scale(1.2); /* liten förstoring på hover */
+  transform: scale(1.2);
 }
+
 .email-link {
   position: absolute;
-  top: 900px; /* justera höjd */
-  left: 450px; /* justera avstånd från högerkant */
-  font-family: "Bodoni", serif; /* samma stil som övrig text eller ändra */
+  top: 900px;
+  left: 450px;
+  font-family: "Bodoni", serif;
   font-size: 16px;
-  color: #8dcdcd; /* turkosgrön */
-  text-decoration: none; /* ingen understrykning */
+  color: #8dcdcd;
+  text-decoration: none;
   z-index: 999;
 }
 
 .email-link:hover {
-  text-decoration: underline; /* valfri hover-effekt */
-  color: #6ea1ab; /* ändra färg vid hover */
+  text-decoration: underline;
+  color: #6ea1ab;
 }
