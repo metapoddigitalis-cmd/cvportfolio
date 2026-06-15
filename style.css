@@ -345,40 +345,28 @@ body {
 }
 .top-left-text {
   position: absolute;
-  top: 435px; /* avstånd från toppen på A4 */
-  left: 440px; /* avstånd från vänsterkant på A4 */
-  width: 40%; /* ungefär en fjärdedel på bredden */
-  color: #71bac2; /* mörk turkosgrön, kan ändras */
-  font-family: "Bodoni MT", sans-serif; /* byt till Bodoni om du vill */
+  top: 435px;
+  left: 440px;
+  width: 40%;
+  color: #71bac2;
+  font-family: "Bodoni MT", sans-serif;
   z-index: 50;
-  .overlay-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40%;
-    color: #71bac2;
-    font-family: "Bodoni MT", serif;
-    z-index: 999;
+  text-align: left;
 
+}.cloud-text-right {
+  position: absolute;
+  top: -200px;
+  left: 390px;
+  width: 330px;
+  color: #71bac2;
+  font-family: "Bodoni MT", serif;
+  z-index: 999;
+  text-align: left;
+}
     /* Se till att texten ligger i vänsterkant */
     text-align: left;
   } /* ligger ovanpå bakgrunden men under moln om z-index är lägre */
-}
-.cloud-text-right {
-  position: absolute;
-  top: -230px; /* justera så den hamnar vid molnet */
-  right: -20px; /* placerar den i höger del */
-  width: 30%;
-  color: #71bac2;
-  font-family: "Bodoni MT", serif;
-  text-align: left;
-  z-index: 999;
-  .cloud-text4 a {
-    font-family: "Luckiest Guy", cursive;
-    font-size: 26px;
-    font-weight: bold;
-  }
-}
+
 .cloud-text4 {
   position: absolute;
   bottom: 200px; /* justera för molnets vertikala position */
@@ -435,4 +423,21 @@ body {
 .email-link:hover {
   text-decoration: underline;
   color: #6ea1ab;
+}
+.youtube-link {
+  position: absolute;
+  bottom: 160px;
+  right: 180px;
+  z-index: 9999;
+}
+
+.youtube-icon {
+  width: 55px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.youtube-icon:hover {
+  transform: scale(1.1);
 }
